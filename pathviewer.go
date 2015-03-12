@@ -28,7 +28,15 @@ import (
 	"strings"
 )
 
+func printUsage() {
+	fmt.Println("Usage:", os.Args[0], "<env_variable>")
+}
+
 func main() {
+	if len(os.Args) != 2 {
+		printUsage()
+		os.Exit(0)
+	}
 	env := os.Args[1]
 	path := os.Getenv(env)
 	fmt.Println(env + ":")
