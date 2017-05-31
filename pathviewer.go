@@ -42,7 +42,9 @@ func main() {
 	fmt.Println(env + ":")
 	if len(path) > 0 {
 		for _, p := range strings.Split(path, string(os.PathListSeparator)) {
-			fmt.Println("-", p)
+			if len(p) > 0 {
+				fmt.Println("-", p)
+			}
 		}
 	}
 }
